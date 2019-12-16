@@ -1,19 +1,26 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
 pool:
   vmImage: 'windows-2019' # AzureFileCopy task only works on Windows
 
+strategy:
+  matrix:
+    default:
+      name: 'default'
+
 steps:
 - task: AzureFileCopy@3
   inputs:
-    SourcePath: 'default'
+    SourcePath: '$(name)'
     azureSubscription: 'DCD-CFTAPPS-SBOX'
     Destination: 'AzureBlob'
-    storage: 'stdefaultshuttersbox'
+    storage: 'st$(name)shuttersbox'
     ContainerName: '$web'
+# - task: AzureFileCopy@3
+#   inputs:
+#     SourcePath: '$(name)'
+#     azureSubscription: 'DCD-CFTAPPS-PROD'
+#     Destination: 'AzureBlob'
+#     storage: 'st$(name)shutterprod'
+#     ContainerName: '$web'
