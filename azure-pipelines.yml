@@ -19,7 +19,7 @@ steps:
     storage: 'st$(name)shuttersbox'
     ContainerName: '$web'
 # - task: AzureFileCopy@3
-#   displayName: "Prod - $(name) - Copy files"
+#   displayName: "Prod - Copy files"
 #   inputs:
 #     SourcePath: '$(name)'
 #     azureSubscription: 'DCD-CFTAPPS-PROD'
