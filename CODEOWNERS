@@ -1,0 +1,8 @@
+# https://help.github.com/en/articles/about-code-owners
+
+* @hmcts/platform-engineering @hmcts/devops
+
+# add your folders below with your github team
+# one folder per line
+
+default/ @hmcts/platform-engineering
