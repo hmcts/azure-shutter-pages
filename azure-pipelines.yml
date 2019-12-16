@@ -11,6 +11,7 @@ strategy:
 
 steps:
 - task: AzureFileCopy@3
+  displayName: "Sandbox - $(name) - Copy files"
   inputs:
     SourcePath: '$(name)'
     azureSubscription: 'DCD-CFTAPPS-SBOX'
@@ -18,6 +19,7 @@ steps:
     storage: 'st$(name)shuttersbox'
     ContainerName: '$web'
 # - task: AzureFileCopy@3
+#   displayName: "Prod[ - $(name) - Copy files"
 #   inputs:
 #     SourcePath: '$(name)'
 #     azureSubscription: 'DCD-CFTAPPS-PROD'
