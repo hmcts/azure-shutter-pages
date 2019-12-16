@@ -19,13 +19,13 @@ steps:
     SourcePath: '$(name)'
     azureSubscription: 'DCD-CFTAPPS-SBOX'
     Destination: 'AzureBlob'
-    storage: 'st$(name)shuttersbox'
+    storage: 'hmcts$(name)shuttersbox'
     ContainerName: '$web'
-# - task: AzureFileCopy@3
-#   displayName: "Prod - Copy files"
-#   inputs:
-#     SourcePath: '$(name)'
-#     azureSubscription: 'DCD-CFTAPPS-PROD'
-#     Destination: 'AzureBlob'
-#     storage: 'st$(name)shutterprod'
-#     ContainerName: '$web'
+- task: AzureFileCopy@3
+  displayName: "Prod - Copy files"
+  inputs:
+    SourcePath: '$(name)'
+    azureSubscription: 'DCD-CFTAPPS-PROD'
+    Destination: 'AzureBlob'
+    storage: 'hmcts$(name)shutterprod'
+    ContainerName: '$web'
