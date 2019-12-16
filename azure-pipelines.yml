@@ -11,7 +11,7 @@ strategy:
 
 steps:
 - task: AzureFileCopy@3
-  displayName: "Sandbox - $(name) - Copy files"
+  displayName: "Sandbox - Copy files"
   inputs:
     SourcePath: '$(name)'
     azureSubscription: 'DCD-CFTAPPS-SBOX'
