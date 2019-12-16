@@ -10,7 +10,6 @@ pool:
   vmImage: 'windows-2019' # AzureFileCopy task only works on Windows
 
 steps:
-
 - task: AzureFileCopy@3
   inputs:
     SourcePath: 'default'
