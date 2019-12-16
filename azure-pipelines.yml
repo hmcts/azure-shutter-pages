@@ -15,17 +15,19 @@ strategy:
 steps:
 - task: AzureFileCopy@3
   displayName: "Sandbox - Copy files"
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
     SourcePath: '$(name)'
     azureSubscription: 'DCD-CFTAPPS-SBOX'
     Destination: 'AzureBlob'
-    storage: 'st$(name)shuttersbox'
+    storage: 'hmcts$(name)shuttersbox'
     ContainerName: '$web'
-# - task: AzureFileCopy@3
-#   displayName: "Prod - Copy files"
-#   inputs:
-#     SourcePath: '$(name)'
-#     azureSubscription: 'DCD-CFTAPPS-PROD'
-#     Destination: 'AzureBlob'
-#     storage: 'st$(name)shutterprod'
-#     ContainerName: '$web'
+- task: AzureFileCopy@3
+  displayName: "Prod - Copy files"
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  inputs:
+    SourcePath: '$(name)'
+    azureSubscription: 'DCD-CFTAPPS-PROD'
+    Destination: 'AzureBlob'
+    storage: 'hmcts$(name)shutterprod'
+    ContainerName: '$web'
