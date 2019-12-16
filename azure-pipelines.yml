@@ -4,6 +4,9 @@ trigger:
 pool:
   vmImage: 'windows-2019' # AzureFileCopy task only works on Windows
 
+# the `name` should be your folder name
+# do not name folders with dashes as storage accounts can't have them in
+# their name.
 strategy:
   matrix:
     default:
