@@ -11,6 +11,12 @@ strategy:
   matrix:
     default:
       name: 'default'
+    sscscor:
+      name: 'sscscor'
+    sscssya:
+      name: 'sscssya'
+    sscstya:
+      name: 'sscstya'
 
 steps:
 - task: AzureFileCopy@3
