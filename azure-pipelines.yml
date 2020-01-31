@@ -11,6 +11,12 @@ strategy:
   matrix:
     default:
       name: 'default'
+    sscscor:
+      name: 'sscscor'
+    sscssya:
+      name: 'sscssya'
+    sscstya:
+      name: 'sscstya'
 
 steps:
 - task: AzureFileCopy@3
@@ -30,31 +36,4 @@ steps:
     azureSubscription: 'DCD-CFTAPPS-PROD'
     Destination: 'AzureBlob'
     storage: 'hmcts$(name)shutterprod'
-    ContainerName: '$web'
-- task: AzureFileCopy@3
-  displayName: "SSCSCOR Prod - Copy files"
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  inputs:
-    SourcePath: 'sscscor'
-    azureSubscription: 'DCD-CFTAPPS-PROD'
-    Destination: 'AzureBlob'
-    storage: 'hmctssscscorshutterprod'
-    ContainerName: '$web'
-- task: AzureFileCopy@3
-  displayName: "SSCSSYA Prod - Copy files"
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  inputs:
-    SourcePath: 'sscssya'
-    azureSubscription: 'DCD-CFTAPPS-PROD'
-    Destination: 'AzureBlob'
-    storage: 'hmctssscssyashutterprod'
-    ContainerName: '$web'
-- task: AzureFileCopy@3
-  displayName: "SSCSTYA Prod - Copy files"
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  inputs:
-    SourcePath: 'sscstya'
-    azureSubscription: 'DCD-CFTAPPS-PROD'
-    Destination: 'AzureBlob'
-    storage: 'hmctssscstyashutterprod'
     ContainerName: '$web'
