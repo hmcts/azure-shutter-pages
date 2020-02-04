@@ -14,46 +14,46 @@ strategy:
       name: 'plum'
       env: 'sbox'
       shutter: 'default'
-      subscription: 'DCD-CFTAPPS-SBOX'
+      subscription: DCD-CFTAPPS-SBOX
     divdn:
       name: 'divdn'
       env: 'prod'
       shutter: 'default'
-      subscription: 'DCD-CFTAPPS-PROD'
+      subscription: DCD-CFTAPPS-PROD
     divda:
       name: 'divda'
       env: 'prod'
       shutter: 'default'
-      subscription: 'DCD-CFTAPPS-PROD'
+      subscription: DCD-CFTAPPS-PROD
     divrfe:
       name: 'divrfe'
       env: 'prod'
       shutter: 'default'
-      subscription: 'DCD-CFTAPPS-PROD'
+      subscription: DCD-CFTAPPS-PROD
     divpfe:
       name: 'divpfe'
       env: 'prod'
       shutter: 'default'
-      subscription: 'DCD-CFTAPPS-PROD'
+      subscription: DCD-CFTAPPS-PROD
     sscscor:
       name: 'sscscor'
       env: 'prod'
       shutter: 'sscscor'
-      subscription: 'DCD-CFTAPPS-PROD'
+      subscription: DCD-CFTAPPS-PROD
     sscssya:
       name: 'sscstrib'
       env: 'prod'
       shutter: 'sscstrib'
-      subscription: 'DCD-CFTAPPS-PROD'
+      subscription: DCD-CFTAPPS-PROD
     sscstya:
       name: 'sscstya'
       env: 'prod'
       shutter: 'sscstya'
-      subscription: 'DCD-CFTAPPS-PROD'
+      subscription: DCD-CFTAPPS-PROD
 
 steps:
 - task: AzureFileCopy@3
-  displayName: "${name} - ${env} Copy files"
+  displayName: "$(name) - $(env) Copy files"
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
     SourcePath: '$(shutter)'
