@@ -10,11 +10,6 @@ pool:
 # `name`: should be the name of your app
 strategy:
   matrix:
-    plum:
-      name: 'plum'
-      env: 'sbox'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-SBOX
     divdn:
       name: 'divdn'
       env: 'prod'
@@ -24,7 +19,7 @@ strategy:
       name: 'divda'
       env: 'prod'
       shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
+      subscription: 
     divrfe:
       name: 'divrfe'
       env: 'prod'
@@ -53,11 +48,20 @@ strategy:
 
 steps:
 - task: AzureFileCopy@3
+  displayName: "Plum - Sbox Copy files"
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  inputs:
+    SourcePath: 'default'
+    azureSubscription: 'DCD-CFTAPPS-SBOX'
+    Destination: 'AzureBlob'
+    storage: 'hmctsplumshuttersbox'
+    ContainerName: '$web'
+- task: AzureFileCopy@3
   displayName: "$(name) - $(env) Copy files"
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
     SourcePath: '$(shutter)'
-    azureSubscription: '$(subscription)'
+    azureSubscription: 'DCD-CFTAPPS-PROD'
     Destination: 'AzureBlob'
     storage: 'hmcts$(name)shutter$(env)'
     ContainerName: '$web'
