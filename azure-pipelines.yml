@@ -4,36 +4,61 @@ trigger:
 pool:
   vmImage: 'windows-2019' # AzureFileCopy task only works on Windows
 
-# the `name` should be your folder name
-# do not name folders with dashes as storage accounts can't have them in
-# their name.
+# `shutter`: should be your folder name
+# do not name folders with dashes as storage accounts can't have them in their name.
+#
+# `name`: should be the name of your app
 strategy:
   matrix:
-    default:
-      name: 'default'
+    plum:
+      name: 'plum'
+      env: 'sbox'
+      shutter: 'default'
+      subscription: 'DCD-CFTAPPS-SBOX'
+    divdn:
+      name: 'divdn'
+      env: 'prod'
+      shutter: 'default'
+      subscription: 'DCD-CFTAPPS-PROD'
+    divda:
+      name: 'divda'
+      env: 'prod'
+      shutter: 'default'
+      subscription: 'DCD-CFTAPPS-PROD'
+    divrfe:
+      name: 'divrfe'
+      env: 'prod'
+      shutter: 'default'
+      subscription: 'DCD-CFTAPPS-PROD'
+    divpfe:
+      name: 'divpfe'
+      env: 'prod'
+      shutter: 'default'
+      subscription: 'DCD-CFTAPPS-PROD'
     sscscor:
       name: 'sscscor'
+      env: 'prod'
+      shutter: 'sscscor'
+      subscription: 'DCD-CFTAPPS-PROD'
     sscssya:
-      name: 'sscssya'
+      name: 'sscstrib'
+      env: 'prod'
+      shutter: 'sscstrib'
+      subscription: 'DCD-CFTAPPS-PROD'
     sscstya:
       name: 'sscstya'
+      env: 'prod'
+      shutter: 'sscstya'
+      subscription: 'DCD-CFTAPPS-PROD'
 
 steps:
 - task: AzureFileCopy@3
-  displayName: "Sandbox - Copy files"
+  displayName: "${name} - ${env} Copy files"
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
-    SourcePath: '$(name)'
-    azureSubscription: 'DCD-CFTAPPS-SBOX'
+    SourcePath: '$(shutter)'
+    azureSubscription: '$(subscription)'
     Destination: 'AzureBlob'
-    storage: 'hmcts$(name)shuttersbox'
+    storage: 'hmcts$(name)shutter$(env)'
     ContainerName: '$web'
-- task: AzureFileCopy@3
-  displayName: "Prod - Copy files"
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  inputs:
-    SourcePath: '$(name)'
-    azureSubscription: 'DCD-CFTAPPS-PROD'
-    Destination: 'AzureBlob'
-    storage: 'hmcts$(name)shutterprod'
-    ContainerName: '$web'
+
