@@ -26,6 +26,9 @@ strategy:
       name: 'divpfe'
       shutter: 'default'
       subscription: DCD-CFTAPPS-PROD
+    iaaip:
+      name: 'iaaip'
+      shutter: 'default'
     sscscor:
       name: 'sscscor'
       shutter: 'sscscor'
