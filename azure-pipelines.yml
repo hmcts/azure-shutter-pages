@@ -10,6 +10,9 @@ pool:
 # `name`: should be the name of your app
 strategy:
   matrix:
+    iaaip:
+      name: 'iaaip'
+      shutter: 'iaaip'
     divdn:
       name: 'divdn'
       shutter: 'default'
