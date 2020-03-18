@@ -41,6 +41,14 @@ strategy:
       name: 'sscstya'
       shutter: 'sscstya'
       subscription: DCD-CFTAPPS-PROD
+    cmc:
+      name: 'cmc'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
+    cmclegal:
+      name: 'cmclegal'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
 
 steps:
 - task: AzureFileCopy@3
