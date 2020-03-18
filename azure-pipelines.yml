@@ -49,6 +49,10 @@ strategy:
       name: 'cmclegal'
       shutter: 'default'
       subscription: DCD-CFTAPPS-PROD
+    wwwccd:
+      name: 'wwwccd'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
 
 steps:
 - task: AzureFileCopy@3
