@@ -1,9 +1,9 @@
 # https://help.github.com/en/articles/about-code-owners
 
-* @hmcts/platform-engineering @hmcts/devops @hmcts/ia-aip-frontend
+* @hmcts/platform-engineering @hmcts/devops 
 
 # add your folders below with your github team
 # one folder per line
 
 default/ @hmcts/platform-engineering
-iaaip/ @hmcts/ia-aip-frontend
+iaaip/ @hmcts/immigration-asylum-admins
