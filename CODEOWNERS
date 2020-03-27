@@ -7,4 +7,5 @@
 
 default/ @hmcts/platform-engineering
 iaaip/ @hmcts/ia-aip-frontend
-probate/ @hmcts/probate
+probateplanned/ @hmcts/probate
+probateunplanned/ @hmcts/probate
