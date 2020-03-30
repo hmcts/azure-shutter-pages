@@ -53,6 +53,10 @@ strategy:
       name: 'wwwccd'
       shutter: 'default'
       subscription: DCD-CFTAPPS-PROD
+    probate:
+      name: 'probate'
+      shutter: 'probate'
+      subscription: DCD-CFTAPPS-PROD
 
 steps:
 - task: AzureFileCopy@3
