@@ -57,6 +57,18 @@ strategy:
       name: 'probate'
       shutter: 'probate'
       subscription: DCD-CFTAPPS-PROD
+    managepa:
+      name: 'managepa'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
+    paybubbl:
+      name: 'paybubbl'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
+    feesregi:
+      name: 'feesregi'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
 
 steps:
 - task: AzureFileCopy@3
