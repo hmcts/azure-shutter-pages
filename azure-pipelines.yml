@@ -69,6 +69,22 @@ strategy:
       name: 'feesregi'
       shutter: 'default'
       subscription: DCD-CFTAPPS-PROD
+    xuiwebap:
+      name: 'xuiwebap'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
+    xuimanag:
+      name: 'xuimanag'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
+    xuiappro:
+      name: 'xuiappro'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
+    xuiregis:
+      name: 'xuiregis'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
 
 steps:
 - task: AzureFileCopy@3
