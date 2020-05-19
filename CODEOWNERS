@@ -8,4 +8,4 @@
 default/ @hmcts/platform-engineering
 iaaip/ @hmcts/immigration-asylum
 probate/ @hmcts/probate
-
+pcq/ @hmcts/pcq

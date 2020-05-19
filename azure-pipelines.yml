@@ -20,7 +20,7 @@ strategy:
     divda:
       name: 'divda'
       shutter: 'default'
-      subscription: 
+      subscription:
     divrfe:
       name: 'divrfe'
       shutter: 'default'
@@ -53,6 +53,9 @@ strategy:
       name: 'wwwccd'
       shutter: 'default'
       subscription: DCD-CFTAPPS-PROD
+    pcq:
+      name: 'pcq'
+      shutter: 'pcq'
     probate:
       name: 'probate'
       shutter: 'probate'
