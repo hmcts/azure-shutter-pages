@@ -92,6 +92,10 @@ strategy:
       name: 'fact'
       shutter: 'default'
       subscription: DCD-CFTAPPS-PROD
+    fact:
+      name: 'nfdiv'
+      shutter: 'default'
+      subscription: DCD-CFTAPPS-PROD
 
 steps:
 - task: AzureFileCopy@3
