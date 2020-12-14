@@ -92,7 +92,7 @@ strategy:
       name: 'fact'
       shutter: 'default'
       subscription: DCD-CFTAPPS-PROD
-    fact:
+    nfdiv:
       name: 'nfdiv'
       shutter: 'default'
       subscription: DCD-CFTAPPS-PROD
