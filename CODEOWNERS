@@ -1,11 +1,11 @@
 # https://help.github.com/en/articles/about-code-owners
 
-* @hmcts/platform-engineering @hmcts/devops
+* @hmcts/platform-operations
 
 # add your folders below with your github team
 # one folder per line
 
-default/ @hmcts/platform-engineering
+default/ @hmcts/platform-operations
 iaaip/ @hmcts/immigration-asylum
 probate/ @hmcts/probate
 pcq/ @hmcts/pcq
