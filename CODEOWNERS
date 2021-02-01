@@ -9,3 +9,6 @@ default/ @hmcts/platform-operations
 iaaip/ @hmcts/immigration-asylum
 probate/ @hmcts/probate
 pcq/ @hmcts/pcq
+sscscor/ @hmcts/sscs
+sscstrib/ @hmcts/sscs
+sscstya/ @hmcts/sscs
