@@ -10,5 +10,6 @@ iaaip/ @hmcts/immigration-asylum
 probate/ @hmcts/probate
 pcq/ @hmcts/pcq
 sscscor/ @hmcts/sscs
+sscsmya/ @hmcts/sscs
 sscstrib/ @hmcts/sscs
 sscstya/ @hmcts/sscs
