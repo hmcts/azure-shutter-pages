@@ -43,11 +43,11 @@ strategy:
       subscription: DCD-CFTAPPS-PROD
     cmc:
       name: 'cmc'
-      shutter: 'default'
+      shutter: 'cmc'
       subscription: DCD-CFTAPPS-PROD
     cmclegal:
       name: 'cmclegal'
-      shutter: 'default'
+      shutter: 'cmclegal'
       subscription: DCD-CFTAPPS-PROD
     wwwccd:
       name: 'wwwccd'
@@ -116,4 +116,3 @@ steps:
     Destination: 'AzureBlob'
     storage: 'hmcts$(name)shutterprod'
     ContainerName: '$web'
-

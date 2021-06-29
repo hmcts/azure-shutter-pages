@@ -12,3 +12,5 @@ pcq/ @hmcts/pcq
 sscscor/ @hmcts/sscs
 sscstrib/ @hmcts/sscs
 sscstya/ @hmcts/sscs
+cmc/ @hmcts/cmc
+cmclegal/ @hmcts/cmc
