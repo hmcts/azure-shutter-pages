@@ -100,7 +100,7 @@ strategy:
       name: 'jdbureau'
       shutter: 'default'
       subscription: DTS-SHAREDSERVICES-PROD
-    juror-bureau:
+    juror-public:
       name: 'jdpublic'
       shutter: 'default'
       subscription: DTS-SHAREDSERVICES-PROD
