@@ -121,7 +121,7 @@ steps:
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
     SourcePath: 'default'
-    azureSubscription: ${{ variables.subscription }}
+    azureSubscription: 'DTS-SHAREDSERVICES-SBOX'
     Destination: 'AzureBlob'
     storage: 'hmctstoffeeshuttersbox'
     ContainerName: '$web'
