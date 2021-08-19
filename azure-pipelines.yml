@@ -96,6 +96,14 @@ strategy:
       name: 'nfdiv'
       shutter: 'default'
       subscription: DCD-CFTAPPS-PROD
+    juror-bureau:
+      name: 'jdbureau'
+      shutter: 'default'
+      subscription: DTS-SHAREDSERVICES-PROD
+    juror-public:
+      name: 'jdpublic'
+      shutter: 'default'
+      subscription: DTS-SHAREDSERVICES-PROD
 
 steps:
 - task: AzureFileCopy@3
@@ -112,7 +120,7 @@ steps:
   condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
   inputs:
     SourcePath: '$(shutter)'
-    azureSubscription: 'DCD-CFTAPPS-PROD'
+    azureSubscription: ${{ variables.subscription }}
     Destination: 'AzureBlob'
     storage: 'hmcts$(name)shutterprod'
     ContainerName: '$web'
