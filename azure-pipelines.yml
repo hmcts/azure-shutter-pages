@@ -8,128 +8,124 @@ pool:
 # do not name folders with dashes as storage accounts can't have them in their name.
 #
 # `name`: should be the name of your app
-strategy:
-  matrix:
-    iaaip:
-      name: 'iaaip'
-      shutter: 'iaaip'
-    divdn:
-      name: 'divdn'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    divda:
-      name: 'divda'
-      shutter: 'default'
-      subscription:
-    divrfe:
-      name: 'divrfe'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    divpfe:
-      name: 'divpfe'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    sscscor:
-      name: 'sscscor'
-      shutter: 'sscscor'
-      subscription: DCD-CFTAPPS-PROD
-    sscssya:
-      name: 'sscstrib'
-      shutter: 'sscstrib'
-      subscription: DCD-CFTAPPS-PROD
-    sscstya:
-      name: 'sscstya'
-      shutter: 'sscstya'
-      subscription: DCD-CFTAPPS-PROD
-    cmc:
-      name: 'cmc'
-      shutter: 'cmc'
-      subscription: DCD-CFTAPPS-PROD
-    cmclegal:
-      name: 'cmclegal'
-      shutter: 'cmclegal'
-      subscription: DCD-CFTAPPS-PROD
-    wwwccd:
-      name: 'wwwccd'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    pcq:
-      name: 'pcq'
-      shutter: 'pcq'
-    probate:
-      name: 'probate'
-      shutter: 'probate'
-      subscription: DCD-CFTAPPS-PROD
-    managepa:
-      name: 'managepa'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    paybubbl:
-      name: 'paybubbl'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    feesregi:
-      name: 'feesregi'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    xuiwebap:
-      name: 'xuiwebap'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    xuimanag:
-      name: 'xuimanag'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    xuiappro:
-      name: 'xuiappro'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    xuiregis:
-      name: 'xuiregis'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    fact:
-      name: 'fact'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    nfdiv:
-      name: 'nfdiv'
-      shutter: 'default'
-      subscription: DCD-CFTAPPS-PROD
-    juror-bureau:
-      name: 'jdbureau'
-      shutter: 'default'
-      subscription: DTS-SHAREDSERVICES-PROD
-    juror-public:
-      name: 'jdpublic'
-      shutter: 'default'
-      subscription: DTS-SHAREDSERVICES-PROD
+parameters:
+  - name: sbox_shutter_pages
+    displayName: List of sbox shutter page configurations
+    type: object
+    default:
+      - name: 'plum'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-SBOX
+      - name: 'toffee'
+        shutter: 'default'
+        subscription: DTS-SHAREDSERVICES-SBOX
+  
+  - name: prod_shutter_pages
+    displayName: List of production shutter page configurations
+    type: object
+    default:
+      - name: 'iaaip'
+        shutter: 'iaaip'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'divdn'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'divda'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'divrfe'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'divpfe'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'sscscor'
+        shutter: 'sscscor'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'sscstrib'
+        shutter: 'sscstrib'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'sscstya'
+        shutter: 'sscstya'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'cmc'
+        shutter: 'cmc'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'cmclegal'
+        shutter: 'cmclegal'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'wwwccd'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'pcq'
+        shutter: 'pcq'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'probate'
+        shutter: 'probate'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'managepa'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'paybubbl'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'feesregi'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'xuiwebap'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'xuimanag'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'xuiappro'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'xuiregis'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'fact'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'nfdiv'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'jdbureau'
+        shutter: 'default'
+        subscription: DTS-SHAREDSERVICES-PROD
+      - name: 'jdpublic'
+        shutter: 'default'
+        subscription: DTS-SHAREDSERVICES-PROD
 
-steps:
-- task: AzureFileCopy@3
-  displayName: "Plum - Sbox Copy files"
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  inputs:
-    SourcePath: 'default'
-    azureSubscription: 'DCD-CFTAPPS-SBOX'
-    Destination: 'AzureBlob'
-    storage: 'hmctsplumshuttersbox'
-    ContainerName: '$web'
-- task: AzureFileCopy@3
-  displayName: "$(name) - Prod Copy files"
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  inputs:
-    SourcePath: '$(shutter)'
-    azureSubscription: ${{ variables.subscription }}
-    Destination: 'AzureBlob'
-    storage: 'hmcts$(name)shutterprod'
-    ContainerName: '$web'
-- task: AzureFileCopy@3
-  displayName: "Toffee - Sbox Copy files"
-  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-  inputs:
-    SourcePath: 'default'
-    azureSubscription: 'DTS-SHAREDSERVICES-SBOX'
-    Destination: 'AzureBlob'
-    storage: 'hmctstoffeeshuttersbox'
-    ContainerName: '$web'
+stages:
+  - stage: "Sbox"
+    displayName: "Sbox copy files"
+    jobs:
+      - ${{ each parameter in parameters.sbox_shutter_pages }}:
+        - job: "${{ parameter.name }}_sbox"
+          steps:
+            - task: AzureFileCopy@3
+              displayName: "${{ parameter.name }} - sbox copy files"
+              inputs:
+                SourcePath: '${{ parameter.shutter }}'
+                azureSubscription: '${{ parameter.subscription }}'
+                Destination: 'AzureBlob'
+                storage: 'hmcts${{ parameter.name }}shuttersbox'
+                ContainerName: '$web'
+
+  - ${{ each parameter in parameters.prod_shutter_pages }}:
+    - stage: "${{ parameter.name }}"
+      displayName: "${{ parameter.name }} - copy shutter files to storage account"
+      condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+      dependsOn: Sbox
+      jobs:
+        - job:
+          steps:
+            - task: AzureFileCopy@3
+              displayName: "${{ parameter.name }} - prod copy files"
+              inputs:
+                SourcePath: '${{ parameter.shutter }}'
+                azureSubscription: '${{ parameter.subscription }}'
+                Destination: 'AzureBlob'
+                storage: 'hmcts${{ parameter.name }}shutterprod'
+                ContainerName: '$web'
