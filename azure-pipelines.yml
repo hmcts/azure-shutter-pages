@@ -93,7 +93,7 @@ parameters:
       - name: 'jdbureau'
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
-      - name: 'jdpublic'
+      - name: 'jdreply'
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
 
