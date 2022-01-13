@@ -87,9 +87,6 @@ parameters:
       - name: 'fact'
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
-      - name: 'nfdiv'
-        shutter: 'default'
-        subscription: DCD-CFTAPPS-PROD
       - name: 'jdbureau'
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
