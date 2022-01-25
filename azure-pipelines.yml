@@ -54,9 +54,6 @@ parameters:
       - name: 'cmclegal'
         shutter: 'cmclegal'
         subscription: DCD-CFTAPPS-PROD
-      - name: 'wwwccd'
-        shutter: 'default'
-        subscription: DCD-CFTAPPS-PROD
       - name: 'pcq'
         shutter: 'pcq'
         subscription: DCD-CFTAPPS-PROD
