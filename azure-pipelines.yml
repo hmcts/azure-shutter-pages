@@ -93,6 +93,9 @@ parameters:
       - name: 'jdreplyj'
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
+      - name: 'pip'
+        shutter: 'default'
+        subscription: DTS-SHAREDSERVICES-PROD
 
 stages:
   - stage: "Sbox"
