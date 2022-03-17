@@ -54,11 +54,11 @@ parameters:
       - name: 'cmclegal'
         shutter: 'cmclegal'
         subscription: DCD-CFTAPPS-PROD
-      - name: 'wwwccd'
-        shutter: 'default'
-        subscription: DCD-CFTAPPS-PROD
       - name: 'pcq'
         shutter: 'pcq'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'lau'
+        shutter: 'lau'
         subscription: DCD-CFTAPPS-PROD
       - name: 'probate'
         shutter: 'probate'
@@ -85,6 +85,9 @@ parameters:
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
       - name: 'fact'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'rpts'
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
       - name: 'jdbureau'
