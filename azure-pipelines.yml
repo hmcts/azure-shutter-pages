@@ -96,7 +96,7 @@ parameters:
       - name: 'jdreplyj'
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
-      - name: 'pip'
+      - name: 'pipfront'
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
 
