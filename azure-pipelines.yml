@@ -24,6 +24,9 @@ parameters:
     displayName: List of production shutter page configurations
     type: object
     default:
+      - name: 'adoption'
+        shutter: 'adoption'
+        subscription: DCD-CFTAPPS-PROD
       - name: 'iaaip'
         shutter: 'iaaip'
         subscription: DCD-CFTAPPS-PROD
