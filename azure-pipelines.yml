@@ -42,6 +42,9 @@ parameters:
       - name: 'divpfe'
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
+      - name: 'nfdivciv'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
       - name: 'sscscor'
         shutter: 'sscscor'
         subscription: DCD-CFTAPPS-PROD
