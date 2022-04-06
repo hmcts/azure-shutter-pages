@@ -96,6 +96,9 @@ parameters:
       - name: 'rpts'
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
+      - name: 'prl'
+        shutter: 'prl'
+        subscription: DCD-CFTAPPS-PROD
       - name: 'jdbureau'
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
