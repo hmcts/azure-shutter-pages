@@ -96,8 +96,8 @@ parameters:
       - name: 'rpts'
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
-      - name: 'prl'
-        shutter: 'prl'
+      - name: 'privatelaw'
+        shutter: 'privatelaw'
         subscription: DCD-CFTAPPS-PROD
       - name: 'jdbureau'
         shutter: 'default'
