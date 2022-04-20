@@ -25,7 +25,7 @@ parameters:
     type: object
     default:
       - name: 'adoption'
-        shutter: 'adoption'
+        shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
       - name: 'iaaip'
         shutter: 'iaaip'
