@@ -97,7 +97,10 @@ parameters:
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
       - name: 'pipfront'
-        shutter: 'default'
+        shutter: 'pip'
+        subscription: DTS-SHAREDSERVICES-PROD
+      - name: 'courttri'
+        shutter: 'pip'
         subscription: DTS-SHAREDSERVICES-PROD
 
 stages:
