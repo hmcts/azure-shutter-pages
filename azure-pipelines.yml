@@ -24,6 +24,9 @@ parameters:
     displayName: List of production shutter page configurations
     type: object
     default:
+      - name: 'adoption'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
       - name: 'iaaip'
         shutter: 'iaaip'
         subscription: DCD-CFTAPPS-PROD
@@ -37,6 +40,9 @@ parameters:
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
       - name: 'divpfe'
+        shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'nfdivciv'
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
       - name: 'sscscor'
@@ -89,6 +95,9 @@ parameters:
         subscription: DCD-CFTAPPS-PROD
       - name: 'rpts'
         shutter: 'default'
+        subscription: DCD-CFTAPPS-PROD
+      - name: 'privatelaw'
+        shutter: 'privatelaw'
         subscription: DCD-CFTAPPS-PROD
       - name: 'jdbureau'
         shutter: 'default'

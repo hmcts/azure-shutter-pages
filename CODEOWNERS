@@ -15,3 +15,5 @@ sscstrib/ @hmcts/sscs
 sscstya/ @hmcts/sscs
 cmc/ @hmcts/cmc
 cmclegal/ @hmcts/cmc
+adoption/ @hmcts/reform-adoption
+privatelaw/ @hmcts/private-law
