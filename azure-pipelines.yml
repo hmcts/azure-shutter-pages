@@ -111,6 +111,15 @@ parameters:
       - name: 'courttri'
         shutter: 'pip'
         subscription: DTS-SHAREDSERVICES-PROD
+      - name: 'vhtestwe'
+        shutter: 'default'
+        subscription: DTS-SHAREDSERVICES-PROD
+      - name: 'vhvideow'
+        shutter: 'default'
+        subscription: DTS-SHAREDSERVICES-PROD
+      - name: 'vhadminw'
+        shutter: 'default'
+        subscription: DTS-SHAREDSERVICES-PROD
 
 stages:
   - stage: "Sbox"
