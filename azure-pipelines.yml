@@ -99,6 +99,9 @@ parameters:
       - name: 'privatelaw'
         shutter: 'privatelaw'
         subscription: DCD-CFTAPPS-PROD
+      - name: 'etsya'
+        shutter: 'etsya'
+        subscription: DCD-CFTAPPS-PROD
       - name: 'jdbureau'
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
