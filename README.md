@@ -7,7 +7,8 @@ https://design-system.service.gov.uk/patterns/service-unavailable-pages/
 
 ## How do I create a new shutter page?
 
-Follow the instructions in the main documentation repository: https://hmcts.github.io/ways-of-working/path-to-live/shutter.html#uploading-static-shutter-pages-to-azure-storage-account
+Follow the instructions in the main documentation repository: https://hmcts.github.io/cloud-native-platform/path-to-live/shutter.html#solution 
+
 
 The easiest way to check rendering is with:
 
