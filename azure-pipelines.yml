@@ -97,7 +97,7 @@ parameters:
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
       - name: 'privatelaw'
-        shutter: 'privatelaw'
+        shutter: 'privatel'
         subscription: DCD-CFTAPPS-PROD
       - name: 'etsya'
         shutter: 'etsya'
