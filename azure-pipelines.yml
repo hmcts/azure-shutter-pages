@@ -102,7 +102,7 @@ parameters:
       - name: 'etsya'
         shutter: 'etsya'
         subscription: DCD-CFTAPPS-PROD
-      - name: 'sptribsfrontend'
+      - name: 'sptribsf'
         shutter: 'default'
         subscription: DCD-CFTAPPS-PROD
       - name: 'jdbureau'
