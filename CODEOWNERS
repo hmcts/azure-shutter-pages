@@ -18,3 +18,4 @@ cmclegal/ @hmcts/cmc
 adoption/ @hmcts/reform-adoption
 privatel/ @hmcts/private-law
 etsya/ @hmcts/employment-tribunals
+sptribs/ @hmcts/special-tribunals
