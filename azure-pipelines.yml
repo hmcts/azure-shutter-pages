@@ -123,7 +123,7 @@ parameters:
       - name: 'vhadminw'
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
-      - name: 'sptribs'
+      - name: 'sptribsf'
         shutter: 'sptribs'
         subscription: DCD-CFTAPPS-PROD
 
