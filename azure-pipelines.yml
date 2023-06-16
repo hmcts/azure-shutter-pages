@@ -124,7 +124,7 @@ parameters:
         shutter: 'default'
         subscription: DTS-SHAREDSERVICES-PROD
       - name: 'sptribsf'
-        shutter: 'sptribs'
+        shutter: 'sptribsf'
         subscription: DCD-CFTAPPS-PROD
 
 stages:
