@@ -126,6 +126,9 @@ parameters:
       - name: 'sptribsf'
         shutter: 'sptribsf'
         subscription: DCD-CFTAPPS-PROD
+      - name: 'portal'
+        shutter: 'default'
+        subscription: DTS-SHAREDSERVICES-PROD
 
 stages:
   - stage: "Sbox"
