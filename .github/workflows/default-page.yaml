@@ -1,11 +1,14 @@
+
 name: push default page
 run-name: ${{ github.ref_name }} ${{ github.actor }}
+
 on:
   push:
     branches:
       - master
     paths:
       - 'default/**'
+
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
@@ -35,4 +38,3 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: "upload"
           app_location: "default" # App source code path relative to repository root
-
