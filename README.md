@@ -18,3 +18,4 @@ open http://localhost:8000
 ```
 
 If you are migrating from the legacy shuttering solution, update the list of apps in [cnp-shutter-application](https://github.com/hmcts/cnp-shutter-application/blob/master/Jenkinsfile#L8).
+
