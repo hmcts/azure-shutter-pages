@@ -1,4 +1,4 @@
-name: push custom page
+name: push default page to plum static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -6,7 +6,7 @@ on:
     branches:
       - master
     paths:
-      - 'plum/**'
+      - 'default/**'
       - .github/workflows/plum.yaml
 
   pull_request:
@@ -14,7 +14,7 @@ on:
     branches:
       - master
     paths:
-      - 'plum/**'
+      - 'default/**'
       - .github/workflows/plum.yaml
 
 jobs:
@@ -33,4 +33,4 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.PLUM }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: "upload"
-          app_location: "plum" # App source code path relative to repository root
+          app_location: "default" # App source code path relative to repository root
