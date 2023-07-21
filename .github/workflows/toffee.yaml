@@ -1,5 +1,4 @@
-
-name: push default page
+name: push custom page
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -7,24 +6,19 @@ on:
     branches:
       - master
     paths:
-      - 'default/**'
-      - .github/workflows/default-page.yaml
+      - 'toffee/**'
+      - .github/workflows/toffee.yaml
 
   pull_request:
     types: [opened]
     branches:
       - master
     paths:
-      - 'default/**'
-      - .github/workflows/default-page.yaml
+      - 'toffee/**'
+      - .github/workflows/toffee.yaml
 
 jobs:
   build_and_deploy_job:
-    strategy:
-      matrix:
-        include: # add application
-          - name: "toffee"
-          - name: "plum"
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
     name: Build and Deploy Job
@@ -36,7 +30,7 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets[matrix.name] }}
+          azure_static_web_apps_api_token: ${{ secrets.TOFFEE }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: "upload"
-          app_location: "default" # App source code path relative to repository root
+          app_location: "toffee" # App source code path relative to repository root

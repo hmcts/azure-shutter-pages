@@ -1,5 +1,4 @@
-
-name: push default page
+name: push custom page
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -7,17 +6,20 @@ on:
     branches:
       - master
     paths:
-      - 'default/**'
-      - .github/workflows/default-page.yaml
+      - 'toffee/**'
+      - .github/workflows/toffee.yaml
+      - 'plum/**'
+      - .github/workflows/plum.yaml
 
   pull_request:
     types: [opened]
     branches:
       - master
     paths:
-      - 'default/**'
-      - .github/workflows/default-page.yaml
-
+      - 'toffee/**'
+      - .github/workflows/toffee.yaml
+      - 'plum/**'
+      - .github/workflows/plum.yaml
 jobs:
   build_and_deploy_job:
     strategy:
@@ -38,5 +40,5 @@ jobs:
         with:
           azure_static_web_apps_api_token: ${{ secrets[matrix.name] }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
-          action: "upload"
+          action: ${{ matrix.name }}
           app_location: "default" # App source code path relative to repository root
