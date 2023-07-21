@@ -2,6 +2,10 @@ name: push default page to Toffee static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
+  workflow_dispatch:
+  check_run:
+    types:
+      - completed
   push:
     branches:
       - master
