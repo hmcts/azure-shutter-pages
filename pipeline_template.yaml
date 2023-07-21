@@ -34,7 +34,7 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.PLUM }}
+          azure_static_web_apps_api_token: ${{ secrets.<app_name> }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: "upload"
           app_location: "<app_name>" # App source code path relative to repository root. Enter "default" for default pages.
