@@ -1,4 +1,4 @@
-name: push default page to plum static webapp
+name: push default page to plum static webapp in sbox env
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
