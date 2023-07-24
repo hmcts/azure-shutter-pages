@@ -1,25 +1,8 @@
-name: push default page to Toffee static webapp
+ame: push default page to Toffee static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
   workflow_dispatch:
-  check_run:
-    types:
-      - completed
-  push:
-    branches:
-      - master
-    paths:
-      - 'default/**'
-      - .github/workflows/toffee.yaml
-
-  pull_request:
-    types: [opened]
-    branches:
-      - master
-    paths:
-      - 'default/**'
-      - .github/workflows/toffee.yaml
 
 jobs:
   build_and_deploy_job:
@@ -34,7 +17,7 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.TOFFEE_PROD }}
+          azure_static_web_apps_api_token: ${{ secrets.TOFFEE_SBOX }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: "upload"
           app_location: "default" # App source code path relative to repository root
