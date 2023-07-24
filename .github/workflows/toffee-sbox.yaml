@@ -1,4 +1,4 @@
-ame: push default page to Toffee static webapp
+ame: push default page to Toffee static webapp in sbox env
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
