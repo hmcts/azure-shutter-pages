@@ -1,0 +1,40 @@
+name: push sutter page to pip-frontend static webapp
+run-name: ${{ github.ref_name }} ${{ github.actor }}
+
+on:
+  workflow_dispatch:
+  check_run:
+    types:
+      - completed
+  push:
+    branches:
+      - master
+    paths:
+      - 'default/**'
+      - .github/workflows/pip-frontend.yaml
+
+  pull_request:
+    types: [opened]
+    branches:
+      - master
+    paths:
+      - 'default/**'
+      - .github/workflows/pip-frontend.yaml
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    name: Build and Deploy Job
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: Build And Deploy
+        id: builddeploy
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.pip_frontend_prod }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
+          action: "upload"
+          app_location: "default" # App source code path relative to repository root. Enter "default" for default pages.
