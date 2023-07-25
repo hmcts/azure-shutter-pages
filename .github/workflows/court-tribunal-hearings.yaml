@@ -1,4 +1,4 @@
-name: push sutter page to court-tribunal-hearings static webapp
+name: push shutter page to court-tribunal-hearings static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:

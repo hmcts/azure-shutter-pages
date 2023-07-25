@@ -1,4 +1,4 @@
-name: push sutter page to vh-video-web static webapp
+name: push shutter page to vh-video-web static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:

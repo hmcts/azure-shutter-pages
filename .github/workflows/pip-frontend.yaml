@@ -1,4 +1,4 @@
-name: push sutter page to pip-frontend static webapp
+name: push shutter page to pip-frontend static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:

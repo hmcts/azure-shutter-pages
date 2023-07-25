@@ -1,4 +1,4 @@
-name: push default page to plum static webapp
+name: push shutter page to plum static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:

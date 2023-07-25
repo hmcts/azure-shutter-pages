@@ -1,4 +1,4 @@
-name: push default page to Toffee static webapp
+name: push shutter page to Toffee static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
