@@ -11,7 +11,7 @@ on:
       - master
     paths:
       - '<app_name>/**'
-      - .github/workflows/<app_name>.yaml
+      - .github/workflows/<file_name>.yaml
 
   pull_request:
     types: [opened]
@@ -19,7 +19,7 @@ on:
       - master
     paths:
       - '<app_name>/**'
-      - .github/workflows/<app_name>.yaml
+      - .github/workflows/<file_name>.yaml
 
 jobs:
   build_and_deploy_job:
