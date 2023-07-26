@@ -1,4 +1,4 @@
-name: push sutter page to <app_name> static webapp
+name: push sutter page to toffee static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
