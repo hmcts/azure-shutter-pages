@@ -28,4 +28,4 @@ jobs:
     uses: hmcts/azure-shutter-pages/.github/workflows/deploy-shutter-pages.yaml@master
     with:
       WEBAPP_TOKEN: ${{ secrets.toffee_prod }}
-      appname: "default" # App source code path relative to repository root. Enter "default" for default pages.
+      shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.

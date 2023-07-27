@@ -25,4 +25,4 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.WEBAPP_TOKEN}}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
           action: "upload"
-          app_location: ${{ inputs.appname }} # App source code path relative to repository root. Enter "default" for default pages.
+          app_location: ${{ inputs.shutter_page_folder }} # App source code path relative to repository root. Enter "default" for default pages.
