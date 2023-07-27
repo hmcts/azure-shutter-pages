@@ -1,4 +1,4 @@
-name: push sutter page to <app_name> static webapp
+name: push shutter page to <app_name> static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -24,8 +24,8 @@ on:
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
-    runs-on: ubuntu-latest
     uses: hmcts/azure-shutter-pages/.github/workflows/deploy-shutter-pages.yaml@master
     with:
-      WEBAPP_TOKEN: ${{ secrets.<app_name_secret>_<env> }}
       shutter_page_folder: "<app_name>" # App source code path relative to repository root. Enter "default" for default pages.
+    secrets:
+      WEBAPP_TOKEN: ${{ secrets.<app_name_secret>_<env> }}
