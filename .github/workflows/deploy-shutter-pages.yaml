@@ -6,7 +6,7 @@ on:
         required: true
         description: Static webapp deployment token
     inputs:
-      appname:
+      shutter_page_folder:
         required: true
         type: string 
 
