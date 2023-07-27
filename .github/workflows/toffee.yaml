@@ -1,4 +1,4 @@
-name: push default page to Toffee static webapp
+name: push shutter page to Toffee static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -25,16 +25,7 @@ jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          submodules: true
-      - name: Build And Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.TOFFEE_PROD }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for GitHub integrations (i.e. PR comments)
-          action: "upload"
-          app_location: "default" # App source code path relative to repository root
+    uses: hmcts/azure-shutter-pages/.github/workflows/deploy-shutter-pages.yaml@master
+    with:
+      WEBAPP_TOKEN: ${{ secrets.toffee_prod }}
+      shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
