@@ -1,4 +1,4 @@
-name: push shutter page to <app_name> static webapp
+name: push shutter page to <file_name> static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
