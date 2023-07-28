@@ -1,4 +1,4 @@
-name: push shutter page to <file_name> static webapp
+name: push shutter page to vh-video-web static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -10,22 +10,22 @@ on:
     branches:
       - master
     paths:
-      - '<app_name>/**'
-      - .github/workflows/<file_name>.yaml
+      - 'default/**'
+      - .github/workflows/vh-video-web.yaml
 
   pull_request:
     types: [opened]
     branches:
       - master
     paths:
-      - '<app_name>/**'
-      - .github/workflows/<file_name>.yaml
+      - 'default/**'
+      - .github/workflows/vh-video-web.yaml
 
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     uses: hmcts/azure-shutter-pages/.github/workflows/deploy-shutter-pages.yaml@master
     with:
-      shutter_page_folder: "<app_name>" # App source code path relative to repository root. Enter "default" for default pages.
+      shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
     secrets:
-      WEBAPP_TOKEN: ${{ secrets.<app_name_secret>_<env> }}
+      WEBAPP_TOKEN: ${{ secrets.VH_VIDEO_WEB_PROD }}
