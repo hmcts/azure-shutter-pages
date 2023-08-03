@@ -1,4 +1,4 @@
-name: push shutter page to pip-frontend static webapp
+name: push shutter page to xui-webapp static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -10,22 +10,22 @@ on:
     branches:
       - master
     paths:
-      - 'pip-frontend/**'
-      - .github/workflows/pip-frontend.yaml
+      - 'default/**'
+      - .github/workflows/xui-webapp.yaml
 
   pull_request:
     types: [opened]
     branches:
       - master
     paths:
-      - 'pip-frontend/**'
-      - .github/workflows/pip-frontend.yaml
+      - 'default/**'
+      - .github/workflows/xui-webapp.yaml
 
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     uses: hmcts/azure-shutter-pages/.github/workflows/deploy-shutter-pages.yaml@master
     with:
-      shutter_page_folder: "pip-frontend" # App source code path relative to repository root. Enter "default" for default pages.
+      shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
     secrets:
-      WEBAPP_TOKEN: ${{ secrets.PIP_FRONTEND_PROD }}
+      WEBAPP_TOKEN: ${{ secrets.XUI_WEBAPP_PROD }}
