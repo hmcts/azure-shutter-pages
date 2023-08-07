@@ -6,16 +6,16 @@
 # one folder per line
 
 default/ @hmcts/platform-operations
-iaaip/ @hmcts/immigration-asylum
+ia-aip/ @hmcts/immigration-asylum
 probate/ @hmcts/probate
 pcq/ @hmcts/pcq
 lau/ @hmcts/lau
-sscscor/ @hmcts/sscs
-sscstrib/ @hmcts/sscs
-sscstya/ @hmcts/sscs
+sscs-cor/ @hmcts/sscs
+sscs-tribunals/ @hmcts/sscs
+sscs-tya/ @hmcts/sscs
 cmc/ @hmcts/cmc
-cmclegal/ @hmcts/cmc
+cmc-legal/ @hmcts/cmc
 adoption/ @hmcts/reform-adoption
-privatel/ @hmcts/private-law
-etsya/ @hmcts/employment-tribunals
-sptribs/ @hmcts/special-tribunals
+private-law/ @hmcts/private-law
+et-sya/ @hmcts/employment-tribunals
+sptribs-frontend/ @hmcts/special-tribunals
