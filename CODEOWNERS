@@ -19,3 +19,4 @@ adoption/ @hmcts/reform-adoption
 private-law/ @hmcts/private-law
 et-sya/ @hmcts/employment-tribunals
 sptribs-frontend/ @hmcts/special-tribunals
+portal/ @hmcts/pre-recorded-evidence
