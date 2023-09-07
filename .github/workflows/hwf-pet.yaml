@@ -1,4 +1,4 @@
-name: push shutter page to et-staff-pet static webapp
+name: push shutter page to hwf-pet static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
