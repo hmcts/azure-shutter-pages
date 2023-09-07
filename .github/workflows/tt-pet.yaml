@@ -1,4 +1,4 @@
-name: push shutter page to et-pet static webapp
+name: push shutter page to tt-pet static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -11,7 +11,7 @@ on:
       - master
     paths:
       - 'default/**'
-      - .github/workflows/et-pet.yaml
+      - .github/workflows/tt-pet.yaml
 
   pull_request:
     types: [opened]
@@ -19,7 +19,7 @@ on:
       - master
     paths:
       - 'default/**'
-      - .github/workflows/et-pet.yaml
+      - .github/workflows/tt-pet.yaml
 
 jobs:
   build_and_deploy_job:
@@ -28,4 +28,4 @@ jobs:
     with:
       shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
     secrets:
-      WEBAPP_TOKEN: ${{ secrets.ET_PET_PROD }}
+      WEBAPP_TOKEN: ${{ secrets.TT_PET_PROD }}
