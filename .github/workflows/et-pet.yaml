@@ -19,7 +19,7 @@ on:
       - master
     paths:
       - 'default/**'
-      - .github/workflows/plum.yaml
+      - .github/workflows/et-pet.yaml
 
 jobs:
   build_and_deploy_job:
