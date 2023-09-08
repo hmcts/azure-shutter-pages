@@ -28,4 +28,4 @@ jobs:
     with:
       shutter_page_folder: "et-response-pet" # App source code path relative to repository root. Enter "default" for default pages.
     secrets:
-      WEBAPP_TOKEN: ${{ secrets.ET_STAFF_PET_PROD }}
+      WEBAPP_TOKEN: ${{ secrets.ET_RESPONSE_PET_PROD }}
