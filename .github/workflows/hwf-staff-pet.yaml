@@ -1,0 +1,31 @@
+name: push shutter page to hwf-staff-pet static webapp
+run-name: ${{ github.ref_name }} ${{ github.actor }}
+
+on:
+  workflow_dispatch:
+  check_run:
+    types:
+      - completed
+  push:
+    branches:
+      - master
+    paths:
+      - 'default/**'
+      - .github/workflows/hwf-staff-pet.yaml
+
+  pull_request:
+    types: [opened]
+    branches:
+      - master
+    paths:
+      - 'default/**'
+      - .github/workflows/hwf-staff-pet.yaml
+
+jobs:
+  build_and_deploy_job:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    uses: hmcts/azure-shutter-pages/.github/workflows/deploy-shutter-pages.yaml@master
+    with:
+      shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
+    secrets:
+      WEBAPP_TOKEN: ${{ secrets.HWF_STAFF_PET_PROD }}
