@@ -9,7 +9,7 @@ default/ @hmcts/platform-operations
 ia-aip/ @hmcts/immigration-asylum
 probate/ @hmcts/probate
 pcq/ @hmcts/pcq
-lau/ @hmcts/lau
+lau/ @hmcts/lau-admins
 sscs-cor/ @hmcts/sscs
 sscs-tribunals/ @hmcts/sscs
 sscs-tya/ @hmcts/sscs
@@ -20,3 +20,4 @@ private-law/ @hmcts/private-law
 et-sya/ @hmcts/employment-tribunals
 sptribs-frontend/ @hmcts/special-tribunals
 portal/ @hmcts/pre-recorded-evidence
+cuira/ @hmcts/lau-admins
