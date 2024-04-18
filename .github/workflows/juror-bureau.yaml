@@ -1,4 +1,4 @@
-name: push shutter page to juror static webapp
+name: push shutter page to juror-bureau static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -11,7 +11,7 @@ on:
       - master
     paths:
       - 'default/**'
-      - .github/workflows/juror.yaml
+      - .github/workflows/juror-bureau.yaml
 
   pull_request:
     types: [opened]
@@ -19,7 +19,7 @@ on:
       - master
     paths:
       - 'default/**'
-      - .github/workflows/juror.yaml
+      - .github/workflows/juror-bureau.yaml
 
 jobs:
   build_and_deploy_job:
@@ -28,4 +28,4 @@ jobs:
     with:
       shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
     secrets:
-      WEBAPP_TOKEN: ${{ secrets.JUROR_PROD }}
+      WEBAPP_TOKEN: ${{ secrets.JUROR_BUREAU_PROD }}
