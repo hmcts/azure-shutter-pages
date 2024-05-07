@@ -10,7 +10,7 @@ on:
     branches:
       - master
     paths:
-      - 'default/**'
+      - 'juror-public/**'
       - .github/workflows/juror-public.yaml
 
   pull_request:
@@ -18,7 +18,7 @@ on:
     branches:
       - master
     paths:
-      - 'default/**'
+      - 'juror-public/**'
       - .github/workflows/juror-public.yaml
 
 jobs:

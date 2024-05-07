@@ -10,7 +10,7 @@ on:
     branches:
       - master
     paths:
-      - 'default/**'
+      - 'juror-legacy/**'
       - .github/workflows/jd-bureau.yaml
 
   pull_request:
@@ -18,7 +18,7 @@ on:
     branches:
       - master
     paths:
-      - 'default/**'
+      - 'juror-legacy/**'
       - .github/workflows/jd-bureau.yaml
 
 jobs:
