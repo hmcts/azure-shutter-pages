@@ -22,3 +22,6 @@ sptribs-frontend/ @hmcts/special-tribunals
 cuira/ @hmcts/lau
 portal/ @hmcts/pre-rec-evidence
 pre-portal/ @hmcts/pre-rec-evidence
+juror/ @hmcts/juror
+juror-public/ @hmcts/juror
+juror-legacy/ @hmcts/juror
