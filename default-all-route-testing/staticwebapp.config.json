@@ -1,8 +1,6 @@
 {
-    "routes": [
-      {
-        "route": "/*",
-        "rewrite": "/"
+    "navigationFallback": {
+        "rewrite": "/*",
+        "exclude": ["*.{css,js}", "/assets/*", "/health/*"]
       }
-    ]
-  } 
+} 
