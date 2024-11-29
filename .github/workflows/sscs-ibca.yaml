@@ -28,4 +28,4 @@ jobs:
     with:
       shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
     secrets:
-      WEBAPP_TOKEN: ${{ secrets.sscs_ibca_PROD }}
+      WEBAPP_TOKEN: ${{ secrets.SSCS_IBCA_PROD }}
