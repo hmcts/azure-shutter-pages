@@ -1,4 +1,4 @@
-name: push shutter page to tools static webapp
+name: push shutter page to tools-atlassian static webapp
 run-name: ${{ github.ref_name }} ${{ github.actor }}
 
 on:
@@ -11,7 +11,7 @@ on:
       - master
     paths:
       - 'default/**'
-      - .github/workflows/tools.yaml
+      - .github/workflows/tools-atlassian.yaml
 
   pull_request:
     types: [opened]
@@ -19,7 +19,7 @@ on:
       - master
     paths:
       - 'default/**'
-      - .github/workflows/tools.yaml
+      - .github/workflows/tools-atlassian.yaml
 
 jobs:
   build_and_deploy_job:
@@ -28,4 +28,4 @@ jobs:
     with:
       shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
     secrets:
-      WEBAPP_TOKEN: ${{ secrets.TOOLS_PROD }}
+      WEBAPP_TOKEN: ${{ secrets.TOOLS_ATLASSIAN_PROD }}
