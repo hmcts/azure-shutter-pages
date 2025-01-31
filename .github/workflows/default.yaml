@@ -1,0 +1,47 @@
+name: Default shutter pages deployment
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+  schedule:
+    - cron: '0 * * * *' # Run every hour
+  
+  pull_request:
+    types: [opened]
+    branches:
+      - master
+    paths:
+      - 'default/**'
+      - .github/workflows/default.yaml
+  
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: AZ CLI login
+      uses: azure/login@v2
+      with:
+        client-id: 633b591d-916a-4a38-8132-dd34e0b8dd4e # custom-domain-revalidator
+        tenant-id: 531ff96d-0ae9-462a-8d2d-bec7c0b42082 # HMCTS.NET
+        allow-no-subscriptions: true
+
+    - name: Run delete_invalid_custom_domains.sh
+      env:
+        WEBAPP_TOKEN: ${{ secrets.WEBAPP_TOKEN }}
+      run: |
+        chmod +x ./scripts/delete_invalid_custom_domains.sh
+        ./scripts/find-empty-static-app.sh
+
+  build_and_deploy_job:
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    uses: hmcts/azure-shutter-pages/.github/workflows/deploy-shutter-pages.yaml@master
+    with:
+      shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
+    secrets:
+      WEBAPP_TOKEN: ${{ env.WEBAPP_TOKEN }}
