@@ -19,7 +19,7 @@ on:
 permissions:
   id-token: write
   contents: read
-  
+
 jobs:
   run-script:
     runs-on: ubuntu-latest
@@ -35,11 +35,11 @@ jobs:
         tenant-id: 531ff96d-0ae9-462a-8d2d-bec7c0b42082 # HMCTS.NET
         allow-no-subscriptions: true
 
-    - name: Run delete_invalid_custom_domains.sh
+    - name: find-empty-static-app.sh
       env:
         WEBAPP_TOKEN: ${{ secrets.WEBAPP_TOKEN }}
       run: |
-        chmod +x ./scripts/delete_invalid_custom_domains.sh
+        chmod +x ./scripts/find-empty-static-app.sh
         ./scripts/find-empty-static-app.sh
 
   build_and_deploy_job:
@@ -49,3 +49,4 @@ jobs:
       shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
     secrets:
       WEBAPP_TOKEN: ${{ secrets.WEBAPP_TOKEN }}
+    needs: run-script
