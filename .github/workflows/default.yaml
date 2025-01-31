@@ -38,8 +38,6 @@ jobs:
 
     - name: find-empty-static-app.sh
       id: export_var
-      env:
-        WEBAPP_TOKEN: ${{ secrets.WEBAPP_TOKEN }}
       run: |
         chmod +x ./scripts/find-empty-static-app.sh
         ./scripts/find-empty-static-app.sh
