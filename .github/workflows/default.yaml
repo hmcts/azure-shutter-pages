@@ -44,4 +44,4 @@ jobs:
     with:
       shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
     secrets:
-      WEBAPP_TOKEN: ${{ env.WEBAPP_TOKEN }}
+      WEBAPP_TOKEN: ${{ secrets.WEBAPP_TOKEN }}
