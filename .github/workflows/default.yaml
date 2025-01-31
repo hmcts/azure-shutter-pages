@@ -8,6 +8,14 @@ on:
   schedule:
     - cron: '0 * * * *' # Run every hour
   
+  pull_request:
+    types: [opened]
+    branches:
+      - master
+    paths:
+      - 'default/**'
+      - .github/workflows/default.yaml
+  
 jobs:
   run-script:
     runs-on: ubuntu-latest
