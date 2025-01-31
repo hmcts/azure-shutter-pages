@@ -23,7 +23,8 @@ permissions:
 jobs:
   run-script:
     runs-on: ubuntu-latest
-
+    outputs:
+      webapp_token: ${{ steps.export_var.outputs.webapp_token }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -36,17 +37,19 @@ jobs:
         allow-no-subscriptions: true
 
     - name: find-empty-static-app.sh
-      env:
-        WEBAPP_TOKEN: ${{ secrets.WEBAPP_TOKEN }}
+      id: export_var
       run: |
         chmod +x ./scripts/find-empty-static-app.sh
         ./scripts/find-empty-static-app.sh
+        echo "::add-mask::$WEBAPP_TOKEN"  # Mask the sensitive value in logs
+        echo "webapp_token=$WEBAPP_TOKEN" >> "$GITHUB_ENV"  # Persist for this job
+        echo "webapp_token=$WEBAPP_TOKEN" >> "$GITHUB_OUTPUT"  # Store for next job securely
 
   build_and_deploy_job:
     if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     uses: hmcts/azure-shutter-pages/.github/workflows/deploy-shutter-pages.yaml@master
     with:
-      shutter_page_folder: "default" # App source code path relative to repository root. Enter "default" for default pages.
+      shutter_page_folder: "default"
     secrets:
-      WEBAPP_TOKEN: ${{ secrets.WEBAPP_TOKEN }}
+      WEBAPP_TOKEN: ${{ needs.job1.outputs.webapp_token }} # Use the output from the previous job
     needs: run-script
