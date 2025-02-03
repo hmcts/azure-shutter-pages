@@ -41,6 +41,7 @@ jobs:
       run: |
         chmod +x ./scripts/find-empty-static-app.sh
         source ./scripts/find-empty-static-app.sh
+        echo "webapp_token=$WEBAPP_TOKEN"
         echo "webapp_token=$WEBAPP_TOKEN" >> "$GITHUB_OUTPUT"  # Store for next job securely
 
   build_and_deploy_job:
