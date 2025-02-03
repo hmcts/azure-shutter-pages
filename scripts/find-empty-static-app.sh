@@ -14,6 +14,7 @@ default_APP="toffee"
 default_RESOURCE_GROUP="sds-platform-shutter-webapp-sbox-rg"
 DEPLOYMENT_TOKEN=$(az staticwebapp secrets list -n $default_APP -g $default_RESOURCE_GROUP --subscription a8140a9e-f1b0-481f-a4de-09e2ee23f7ab --query "properties.apiKey" -o tsv)
 export WEBAPP_TOKEN=$DEPLOYMENT_TOKEN
+export WEBAPP_NAME=$default_APP
 
 # Iterate through subscriptions
 for SUBSCRIPTION_PAIR in "${SUBSCRIPTIONS[@]}"; do
@@ -43,6 +44,7 @@ for SUBSCRIPTION_PAIR in "${SUBSCRIPTIONS[@]}"; do
                 exit 1
             fi
             export WEBAPP_TOKEN=$DEPLOYMENT_TOKEN
+            export WEBAPP_NAME=$APP
         fi        
     done
 done
