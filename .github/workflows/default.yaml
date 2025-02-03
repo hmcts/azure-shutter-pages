@@ -25,6 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       webapp_token: ${{ steps.export_var.outputs.webapp_token }}
+      webapp_name: ${{ steps.export_var.outputs.webapp_name }}
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
@@ -43,9 +44,10 @@ jobs:
         source ./scripts/find-empty-static-app.sh
         echo "Web App Name: $WEBAPP_NAME"
         echo "webapp_token=$WEBAPP_TOKEN" >> "$GITHUB_OUTPUT"  # Store for next job securely
+        echo "webapp_name=$WEBAPP_NAME" >> "$GITHUB_OUTPUT"
 
   build_and_deploy_job:
-    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule'
+    if: (github.event_name == 'push' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule') && needs.run-script.outputs.webapp_name != 'toffee'
     uses: hmcts/azure-shutter-pages/.github/workflows/deploy-shutter-pages.yaml@master
     with:
       shutter_page_folder: "default"
