@@ -9,6 +9,12 @@ SUBSCRIPTIONS=(
     "ed302caf-ec27-4c64-a05e-85731c3ce90e:MTA-STS-Site"
 )
 
+# Setting default value for WEBAPP_TOKEN
+default_APP="toffee"
+default_RESOURCE_GROUP="sds-platform-shutter-webapp-sbox-rg"
+DEPLOYMENT_TOKEN=$(az staticwebapp secrets list -n $default_APP -g $default_RESOURCE_GROUP --subscription a8140a9e-f1b0-481f-a4de-09e2ee23f7ab --query "properties.apiKey" -o tsv)
+export WEBAPP_TOKEN=$DEPLOYMENT_TOKEN
+
 # Iterate through subscriptions
 for SUBSCRIPTION_PAIR in "${SUBSCRIPTIONS[@]}"; do
     IFS=":" read -r SUBSCRIPTION RESOURCE_GROUP <<< "$SUBSCRIPTION_PAIR"
@@ -21,9 +27,6 @@ for SUBSCRIPTION_PAIR in "${SUBSCRIPTIONS[@]}"; do
     # Get list of static web apps in resource group
     STATIC_WEB_APPS=$(az staticwebapp list --resource-group $RESOURCE_GROUP --query "[].name" -o tsv)
     
-    # Setting default value for WEBAPP_TOKEN
-        export WEBAPP_TOKEN="NULL"
-
     # Iterate through static web apps
     for APP in $STATIC_WEB_APPS; do
         echo "----------------------------------------"
