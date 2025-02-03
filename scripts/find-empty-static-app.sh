@@ -33,6 +33,10 @@ for SUBSCRIPTION_PAIR in "${SUBSCRIPTIONS[@]}"; do
             echo "Repository URL is empty for static web app: $APP"
             DEPLOYMENT_TOKEN=$(az staticwebapp secrets list -n $APP -g $RESOURCE_GROUP --query "properties.apiKey" -o tsv)
             # Set WEBAPP_TOKEN
+            if [ -z "$DEPLOYMENT_TOKEN" ]; then
+                echo "Error: DEPLOYMENT_TOKEN is not set!"
+                exit 1
+            fi
             export WEBAPP_TOKEN=$DEPLOYMENT_TOKEN
         fi        
     done

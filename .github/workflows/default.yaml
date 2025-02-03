@@ -40,7 +40,7 @@ jobs:
       id: export_var
       run: |
         chmod +x ./scripts/find-empty-static-app.sh
-        ./scripts/find-empty-static-app.sh
+        source ./scripts/find-empty-static-app.sh
         echo "::add-mask::$WEBAPP_TOKEN"  # Mask the sensitive value in logs
         echo "webapp_token=$WEBAPP_TOKEN" >> "$GITHUB_ENV"  # Persist for this job
         echo "webapp_token=$WEBAPP_TOKEN" >> "$GITHUB_OUTPUT"  # Store for next job securely
@@ -51,5 +51,5 @@ jobs:
     with:
       shutter_page_folder: "default"
     secrets:
-      WEBAPP_TOKEN: ${{ needs.job1.outputs.webapp_token }} # Use the output from the previous job
+      WEBAPP_TOKEN: ${{ needs.run-script.outputs.webapp_token }} # Use the output from the previous job
     needs: run-script
