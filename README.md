@@ -7,7 +7,7 @@ https://design-system.service.gov.uk/patterns/service-unavailable-pages/
 
 ## Default Shutter page - Schedule Job
 
-This repository includes a scheduled GitHub Action (.github/workflows/default.yaml) that runs every hour. The action checks for any static apps that do not have pages uploaded for the specified subscriptions and resource groups. So if you do not require `custom` page for your application, you would not need to do anything on this repository.  Please note that the schedule job only process one App at time so if there are multiple static apps without default pages, it may take couple of hours to see default pages uploaded.
+This repository includes a scheduled GitHub Action (.github/workflows/default.yaml) that runs every hour. The action checks for any static apps that do not have pages uploaded for the specified subscriptions and resource groups. So if you do not require `custom` page for your application, you would not need to do anything on this repository.  Please note that the schedule job only process one App at time so if there are multiple static apps without default pages, it may take couple of hours to see default pages uploaded, you can always run `Default shutter pages deployment` action manually if needed.
 
 ```shell
    a8140a9e-f1b0-481f-a4de-09e2ee23f7ab: sds-platform-shutter-webapp-sbox-rg  
