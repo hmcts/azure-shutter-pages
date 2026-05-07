@@ -18,6 +18,7 @@ cmc-legal/ @hmcts/cmc
 adoption/ @hmcts/reform-adoption
 private-law/ @hmcts/private-law
 et-sya/ @hmcts/employment-tribunals
+et-syr/ @hmcts/employment-tribunals
 sptribs-frontend/ @hmcts/special-tribunals
 cuira/ @hmcts/lau
 portal/ @hmcts/pre-rec-evidence
