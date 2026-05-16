@@ -28,7 +28,7 @@ jobs:
       webapp_name: ${{ steps.export_var.outputs.webapp_name }}
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v6
 
     - name: AZ CLI login
       uses: azure/login@v2
