@@ -26,4 +26,5 @@ pre-portal/ @hmcts/pre-rec-evidence
 juror/ @hmcts/juror
 juror-public/ @hmcts/juror
 juror-legacy/ @hmcts/juror
+juror-er-portal/ @hmcts/juror
 darts-portal/ @hmcts/darts
